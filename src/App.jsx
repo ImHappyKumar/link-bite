@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Analytics from "./pages/Analytics";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Redirect from "./pages/Redirect";
 
 function App() {
   const ScrollToTop = () => {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/:shortCode" element={<Redirect />} />
       </Routes>
     </Router>
   );
