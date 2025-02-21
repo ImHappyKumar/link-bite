@@ -13,9 +13,11 @@ app.use(cors());
 
 // Import Routes
 const urlRoutes = require("./routes/urlRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes");
 
 // Use Routes
 app.use("/", urlRoutes);
+app.use("/analytics", analyticsRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
