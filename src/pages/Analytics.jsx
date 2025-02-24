@@ -19,7 +19,8 @@ const Analytics = () => {
   const [analytics, setAnalytics] = useState(null);
   const [error, setError] = useState("");
 
-  const fetchAnalytics = async () => {
+  const fetchAnalytics = async (e) => {
+    e.preventDefault();
     setError(""); // Reset error before fetching
     setAnalytics(null); // Reset previous data
 
@@ -67,22 +68,26 @@ const Analytics = () => {
           </p>
         </div>
 
-        {/* Input Field */}
-        <div className="flex justify-center mt-6">
-          <input
-            type="text"
-            className="p-3 w-64 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
-            placeholder="Enter short code"
-            value={shortCode}
-            onChange={(e) => setShortCode(e.target.value)}
-          />
-          <button
-            className="ml-4 px-6 py-3 bg-primary hover:bg-secondary text-white font-bold rounded-lg shadow-lg transition duration-300"
-            onClick={fetchAnalytics}
-          >
+        {/* Form Section */}
+        <form
+          className="mt-8 mx-auto w-full max-w-lg bg-white shadow-lg rounded-xl p-6 flex flex-col sm:flex-row gap-4"
+          onSubmit={fetchAnalytics}
+        >
+          <div className="w-full">
+            <input
+              type="text"
+              className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="Enter short code"
+              value={shortCode}
+              onChange={(e) => setShortCode(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className="w-full sm:w-3/4 px-4 py-3 bg-primary hover:bg-secondary text-white font-bold rounded-lg transition duration-300 shadow-md">
             Get Analytics
           </button>
-        </div>
+        </form>
 
         {/* Error Message */}
         {error && <p className="text-red-600 text-center mt-4">{error}</p>}
@@ -96,32 +101,32 @@ const Analytics = () => {
                 <h3 className="text-lg font-semibold text-gray-700">
                   Total Clicks
                 </h3>
-                <p className="text-2xl font-bold text-primary">
-                  {analytics.clicks}
+                <p className="text-2xl font-bold text-primary capitalize">
+                  {analytics.clicks || "N/A"}
                 </p>
               </div>
               <div className="bg-white shadow-lg rounded-lg p-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-700">
                   Top Referrer
                 </h3>
-                <p className="text-xl font-bold text-secondary">
-                  {Object.keys(analytics.referrer)[0] || "N/A"}
+                <p className="text-xl font-bold text-secondary capitalize">
+                  {Object.keys(analytics.referrer || {})[0] || "N/A"}
                 </p>
               </div>
               <div className="bg-white shadow-lg rounded-lg p-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-700">
                   Top Device
                 </h3>
-                <p className="text-xl font-bold text-accent">
-                  {Object.keys(analytics.device_info)[0] || "N/A"}
+                <p className="text-xl font-bold text-accent capitalize">
+                  {Object.keys(analytics.device_info || {})[0] || "N/A"}
                 </p>
               </div>
               <div className="bg-white shadow-lg rounded-lg p-4 text-center">
                 <h3 className="text-lg font-semibold text-gray-700">
                   Geo Location
                 </h3>
-                <p className="text-xl font-bold text-red-500">
-                  {Object.keys(analytics.geo_location)[0] || "Unknown"}
+                <p className="text-xl font-bold text-red-500 capitalize">
+                  {Object.keys(analytics.geo_location || {})[0] || "Unknown"}
                 </p>
               </div>
             </div>

@@ -59,6 +59,7 @@ const Home = () => {
             Shorten Now
           </button>
         </form>
+        
         {/* Error Message */}
         {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
 
