@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center px-6 py-36">
+      <div className="flex flex-col items-center justify-center px-6 py-12">
         <div className="text-center max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold text-primary leading-tight">
             Shorten & Share Links with{" "}
