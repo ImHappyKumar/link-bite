@@ -8,10 +8,10 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="bg-dark text-white shadow-md">
-        <div className="container mx-auto flex justify-between items-center px-6 py-4">
+      <nav className="bg-dark text-white shadow-md sticky top-0 z-50">
+        <div className="container mx-auto flex justify-between items-center px-6 py-3">
           {/* Logo */}
-          <Link to="/" className="text-3xl font-bold tracking-wide">
+          <Link to="/" className="text-2xl font-bold tracking-wide">
             <span className="text-white">Link</span>
             <span className="text-accent">Bite</span>
           </Link>

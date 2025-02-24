@@ -58,7 +58,7 @@ const Analytics = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-background px-6 py-12">
+      <div className="flex flex-col justify-center items-center px-6 py-36">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-primary mb-6">
             URL Analytics
