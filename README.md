@@ -30,12 +30,44 @@ Before you begin, ensure you have the following installed:
     npm install
     ```
 
+## Firebase Setup
+1. Create a Firebase project at https://console.firebase.google.com/
+2. Enable **Firestore Database**
+3. Copy your Firebase config
+4. Create a file named:
+    ```
+    firebase.js
+    ```
+5. Use the sample file provided:
+    ```
+    firebase.sample.js
+    ```
+6. Replace placeholders with your actual Firebase credentials
+
 ## Usage
 1. Start the development server:
     ```
     npm start
     ```
 2. Access the application in your browser at http://localhost:3000
+
+## Deployment (Firebase Hosting)
+1. Install Firebase CLI:
+    ```
+    npm install -g firebase-tools
+    ```
+2. Login to Firebase:
+    ```
+    firebase login
+    ```
+3. Initialize project:
+    ```
+    firebase init
+    ```
+4. Deploy:
+    ```
+    firebase deploy
+    ```
 
 ## Contributing
 Contributions are welcome! If you encounter issues or have suggestions, please create an issue or submit a pull request.
