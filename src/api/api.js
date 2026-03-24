@@ -1,12 +1,12 @@
+import { db } from "../firebase";
 import {
-  db,
   setDoc,
   getDoc,
   doc,
   updateDoc,
   increment,
   arrayUnion,
-} from "../firebase";
+} from "firebase/firestore";
 import { nanoid } from "nanoid";
 
 // Function to generate a unique short code
@@ -87,7 +87,7 @@ export const redirectAndTrack = async (shortCode) => {
           device_info: { [deviceType]: increment(1) },
           timestamps: arrayUnion(timestamp),
         },
-        { merge: true }
+        { merge: true },
       ),
 
       // Update Clicks Count in `short_urls`

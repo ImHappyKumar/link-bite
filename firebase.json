@@ -1,0 +1,35 @@
+{
+  "hosting": [
+    {
+      "site": "linkbite",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "site": "linkbite-happykumar",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "redirects": [
+        {
+          "source": "**",
+          "destination": "https://linkbite.web.app",
+          "type": 301
+        }
+      ]
+    }
+  ]
+}
