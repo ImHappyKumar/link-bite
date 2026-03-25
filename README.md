@@ -47,9 +47,9 @@ Before you begin, ensure you have the following installed:
 ## Usage
 1. Start the development server:
     ```
-    npm start
+    npm run dev
     ```
-2. Access the application in your browser at http://localhost:3000
+2. Access the application in your browser at http://localhost:5173
 
 ## Deployment (Firebase Hosting)
 1. Install Firebase CLI:
